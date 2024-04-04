@@ -1,0 +1,10 @@
+@if (age>=18){
+
+<ul>
+
+    @for (produit of listeArticle; track $index){
+        <li>{{produit.prix}}€</li>
+    }
+</ul>
+
+}

@@ -1,0 +1,47 @@
+<form
+    [formGroup]="formulaire"
+    (ngSubmit)="onAjoutUtilisateur()"
+    style="display: flex; flex-direction: column; max-width: 400px;">
+    <mat-form-field>
+        <mat-label>Prenom</mat-label>
+        <input matInput placeholder="Ex. Doe" formControlName="prenom" >
+    </mat-form-field>  
+
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Ex. John" formControlName="nom">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Ex. a@a.com" formControlName="email">
+        @if(formulaire.get('email')?.hasError('email')){
+            <mat-error>Mauvais format d'email</mat-error>
+            
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <mat-label>Mot de passe</mat-label>
+        <input matInput placeholder="password" formControlName="motDePasse" type="password">
+        <mat-error>Mot de passe obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Responsable de site</mat-label>
+        <mat-checkbox  formControlName="respSite">
+            Responsable de site
+        </mat-checkbox>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Responsable de site</mat-label>
+        <mat-checkbox  formControlName="gestMat" >
+            Gestionnaire de matériel
+        </mat-checkbox>
+    </mat-form-field>
+
+    <button mat-raised-button color="submit">Ajouter utilisateur</button>
+
+</form>

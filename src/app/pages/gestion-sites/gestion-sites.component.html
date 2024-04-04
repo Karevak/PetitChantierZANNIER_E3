@@ -1,0 +1,35 @@
+<div class="container">
+    <button mat-raised-button color="primary" routerLink="/edition-site">
+            Ajouter sites
+    </button>
+
+    <div class="row"> 
+        
+        @for (site of listeSites; track $index){
+
+        <div class="col-6 col-md-6 col-lg-4 mt-4">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>
+                        {{site.nom}}
+                        {{site.adresse}}
+                    </mat-card-title>
+                  <mat-card-subtitle>Coordonnées géographique: {{site.coord}} </mat-card-subtitle>
+                </mat-card-header>
+                <img 
+                    mat-card-image 
+                    src="https://placehold.co/600x400/png" 
+                    alt="Photo of user"
+                />
+                <mat-card-content>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" [routerLink]= "['/edition-site',site.id]">Modifier</button>
+                </mat-card-actions>
+              </mat-card>
+            
+        </div>
+        }
+    </div>
+</div>
+

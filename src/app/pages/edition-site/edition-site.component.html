@@ -1,0 +1,25 @@
+<form
+    [formGroup]="formulaire"
+    (ngSubmit)="onAjoutSite()"
+    style="display: flex; flex-direction: column; max-width: 400px;">
+
+
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Ex. John" formControlName="nom">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Adresse</mat-label>
+        <input matInput placeholder="Ex. Doe" formControlName="adresse" >
+    </mat-form-field>  
+
+    <mat-form-field>
+
+        <mat-label>Coordonnées géographique</mat-label>
+        <input matInput placeholder="password" formControlName="coord" >
+    </mat-form-field>
+
+    <button mat-raised-button color="submit">Ajouter site</button>
+
+</form>

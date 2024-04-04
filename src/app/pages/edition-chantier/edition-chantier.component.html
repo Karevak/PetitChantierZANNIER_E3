@@ -1,0 +1,18 @@
+<form
+    [formGroup]="formulaire"
+    (ngSubmit)="onAjoutChantier()"
+    style="display: flex; flex-direction: column; max-width: 400px;">
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Ex. Doe" formControlName="nom" >
+    </mat-form-field>  
+
+    <mat-form-field>
+        <mat-label>Duree chantier en jour</mat-label>
+        <input matInput placeholder="Ex: 5" formControlName="dureeJourEstimee">
+    </mat-form-field>
+
+
+    <button mat-raised-button color="submit">Ajouter Chantier</button>
+
+</form>
